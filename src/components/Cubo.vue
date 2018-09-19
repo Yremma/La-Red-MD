@@ -6,7 +6,7 @@
                 <swiper :options="swiperOptionHorizontal" dir="rtl">
                     
                     <!-- Logo -->
-                    <swiper-slide class="swiper-item">
+                    <swiper-slide class="swiper-item" :class="ClaseLogo">
                         <el-col :span="24" class="principal">
                             <center><img :src="Logo" style="width:100%"></center>
                         </el-col>
@@ -14,7 +14,7 @@
 
                     <!-- Diseño Gráfico -->
                     <swiper-slide class="swiper-item padding-0"> 
-                        <el-row class="TextoVariable padding-0">
+                        <el-row class="padding-0">
                             <el-col :span="24" class="fondo">
                                 <img :src="DiseñoGrafico"/>
                             </el-col>
@@ -29,7 +29,7 @@
 
                     <!-- Multimedia -->
                     <swiper-slide class="swiper-item padding-0"> 
-                        <el-row class="TextoVariable padding-0">
+                        <el-row class="padding-0">
                             <el-col :span="24" class="fondo">
                                 <img :src="Multimedia"/>
                             </el-col>
@@ -44,7 +44,7 @@
 
                     <!-- Diseño Web -->
                     <swiper-slide class="swiper-item padding-0"> 
-                        <el-row class="TextoVariable padding-0">
+                        <el-row class="padding-0">
                             <el-col :span="24" class="fondo">
                                 <img :src="DiseñoWeb"/>
                             </el-col>
@@ -59,7 +59,7 @@
 
                     <!-- Community Manager -->
                     <swiper-slide class="swiper-item padding-0"> 
-                        <el-row class="TextoVariable padding-0">
+                        <el-row class="padding-0">
                             <el-col :span="24" class="fondo">
                                 <img :src="SocialMedia"/>
                             </el-col>
@@ -91,6 +91,9 @@
                 DiseñoWeb:      'imagenes/DiseñoWeb.jpg',
                 Multimedia:     'imagenes/Multimedia.jpg',
                 SocialMedia:    'imagenes/CommunityManager.jpg',
+                Alto:           '',
+                Ancho:          '',
+                ClaseLogo:      '',
 
                 swiperOptionHorizontal: 
                 {   /*direction: 'vertical',  */
@@ -116,12 +119,12 @@
             };
         },
         
-        mounted()
-        {   var TamanioFuente = window.innerWidth * 40 / 1366;
-            var aux = document.getElementsByClassName("TextoVariable");
-            var i;
-            for (i=0; i<aux.length; i++) 
-            {   aux[i].style.fontSize = TamanioFuente + 'px';
+
+        beforeMount()
+        {   this.Alto   = window.innerHeight;
+            this.Ancho  = window.innerWidth;
+            if(this.Alto>this.Ancho)  
+            {    this.ClaseLogo = 'padding-0';
             }
         }
     }
@@ -178,6 +181,7 @@
         font-weight: 300;
         background-color: rgba(84,92,100,0.3);
         font-family: 'Pacifico', cursive;
+        font-size: 3vw;
     }
     
     .swiper-slide .title {

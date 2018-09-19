@@ -19,10 +19,34 @@
     {   components:
         {   Footer
         },
+
+    
         data()
         {   return {
-                Height:  window.innerHeight * 72 / 100,
+                Height: window.innerHeight * 72 / 100,
+                Ancho:  window.innerWidth  * 97 / 100,
             }
+        },
+
+
+        methods:
+        {   // FUNCION PARA CALCULAR SI SE GIRA EL CELULAR Y HACER REFRESH
+            Calcular()
+            {   if( (window.innerWidth*97/100)!=this.Ancho )
+                {   location.reload();
+                }   
+            }        
+        },
+        
+        
+        beforeMount()
+        {   this.Ancho  = window.innerWidth  * 97 / 100;
+        },
+
+
+        mounted()
+        {   this.Calcular();
+            setInterval(this.Calcular, 300);
         }
     }
 </script>
@@ -126,6 +150,82 @@
     .el-message p
     {   font-size: 22px;
         font-family: 'Advent Pro', sans-serif;
+    }
+
+
+
+    /** DISPLAY ********************************************************************************************************/
+
+    @media (max-width:767px)
+    {	.hidden-xs
+        {	display: none !important;
+        }
+        .visible-xs
+        {	display: block !important;
+        }
+        .visible-sm
+        {	display: none !important;
+        }
+        .visible-md
+        {	display: none !important;
+        }
+        .visible-lg
+        {	display: none !important;
+        }
+    }
+
+    @media (min-width:768px) and (max-width:991px)
+    {	.hidden-sm
+        {	display: none !important
+        }
+        .visible-xs
+        {	display: none !important;
+        }
+        .visible-sm
+        {	display: block !important;
+        }
+        .visible-md
+        {	display: none !important;
+        }
+        .visible-lg
+        {	display: none !important;
+        }
+    }
+
+    @media (min-width:992px) and (max-width:1199px)
+    {	.hidden-md
+        {	display: none !important
+        }
+        .visible-xs
+        {	display: none !important;
+        }
+        .visible-sm
+        {	display: none !important;
+        }
+        .visible-md
+        {	display: block !important;
+        }
+        .visible-lg
+        {	display: none !important;
+        }
+    }
+
+    @media (min-width:1200px)
+    {	.hidden-lg
+        {	display: none !important
+        }
+        .visible-xs
+        {	display: none !important;
+        }
+        .visible-sm
+        {	display: none !important;
+        }
+        .visible-md
+        {	display: none !important;
+        }
+        .visible-lg
+        {	display: block !important;
+        }
     }
     
 </style>

@@ -5,6 +5,7 @@
         <el-menu class="hidden-xs-only" mode="horizontal" background-color="#545c64" text-color="#E7A905" active-text-color="#E7A905" style="padding-top:10px">
             <el-menu-item index="4" style="float:right" v-on:click="ir_a('footer')"     >Contacto           </el-menu-item>            
             <el-menu-item index="2" style="float:right" v-on:click="dialogVisible=true" >Asesoramiento      </el-menu-item>
+            <el-menu-item index="5" style="float:right" v-on:click="ir_a('Trabajos')"   >Nuestros Trabajos  </el-menu-item>
             <el-menu-item index="3" style="float:right" v-on:click="ir_a('Servicios')"  >Servicios          </el-menu-item>
             <el-menu-item index="1" style="float:right" v-on:click="ir_a('Slide')"      >Inicio             </el-menu-item>  
         </el-menu>
@@ -17,6 +18,7 @@
                 </template>
                 <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('Slide')"      >Inicio           </div>
                 <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('Servicios')"  >Servicios        </div>
+                <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('Trabajos')"   >Nuestros Trabajos</div>
                 <div class="el-col el-col-24" style="float:right" v-on:click="dialogVisible=true" >Asesoramiento    </div>                
                 <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('footer')"     >Contacto         </div>
             </el-collapse-item>
