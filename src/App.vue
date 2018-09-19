@@ -2,7 +2,7 @@
     <el-container id="app">
         <el-main v-bind:style="{ minHeight: Height + 'px' }" 
         style="padding:0px; margin-top:-8px; margin-right:-8px; margin-left:-8px">
-            <router-view style="margin-top:3%"></router-view>
+            <router-view></router-view>
         </el-main>
         <el-footer style="padding:0px; margin-right:-8px; margin-left:-8px; height:0px">
             <Footer></Footer>

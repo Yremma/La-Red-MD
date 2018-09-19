@@ -64,7 +64,11 @@
 
 <style>
     #galeria
-    {   background-color: rgba(255, 255, 255, 0.3);
+    {   background: url("./../assets/FondoVerde.jpg");
+        background-attachment: fixed;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
     #GridTrabajos 
     {   margin-bottom: 30px;
@@ -108,32 +112,31 @@
         transition: all 300ms ease-in-out; 
     }
     .Trabajos:hover img
-    {  filter: grayscale(100%);
+    {   filter: sepia(100%) saturate(6);
         cursor: pointer;
     }
 
 
-    .el-checkbox-button.is-checked:first-child .el-checkbox-button__inner, .el-checkbox-button.is-checked:last-child .el-checkbox-button__inner
-    {   border: 1px solid #00ADAD;
-    }
-    .el-checkbox-button:first-child .el-checkbox-button__inner, .el-checkbox-button:last-child .el-checkbox-button__inner
-    {   border: 1px solid #545C64;
-        border-radius: 5px;
-    }
     .el-checkbox-button.is-checked .el-checkbox-button__inner
-    {   background-color: #00ADAD;
-        color: #fff;
-        border: 1px solid #00ADAD;
+    {   background-color: #F9B233;
+        color: #545C64;
+        border: 1px solid #F9B233;
         -webkit-transition: all 300ms ease-in-out;
         -moz-transition: all 300ms ease-in-out;
         -o-transition: all 300ms ease-in-out;
         -ms-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 5, 2, 1);
+        -moz-box-shadow:    0px 0px 10px 0px rgba(0, 5, 2, 1);
+        box-shadow:         0px 0px 10px 0px rgba(0, 5, 2, 1);
+    }
+    .el-checkbox-button:hover .el-checkbox-button__inner
+    {   color: #fff;
     }
     .el-checkbox-button .el-checkbox-button__inner
-    {   background-color: rgba(0,0,0,0);
-        color: #545C64;
-        border: 1px solid #545C64;
+    {   background-color: rgba(255,255,255,.5);
+        color: #000;
+        border: 1px solid #F9B233;
         font-weight: bold;
         font-size: small;
         margin-bottom: 5px;
@@ -145,5 +148,18 @@
         -o-transition: all 300ms ease-in-out;
         -ms-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 5, 2, 1);
+        -moz-box-shadow:    0px 0px 10px 0px rgba(0, 5, 2, 1);
+        box-shadow:         0px 0px 10px 0px rgba(0, 5, 2, 1);
+    }
+    .el-checkbox-button:first-child .el-checkbox-button__inner, 
+    .el-checkbox-button:last-child .el-checkbox-button__inner, 
+    .el-checkbox-button.is-checked:first-child .el-checkbox-button__inner, 
+    .el-checkbox-button.is-checked:last-child .el-checkbox-button__inner
+    {   border: 1px solid #F9B233;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 5, 2, 1) !important;
+        -moz-box-shadow:    0px 0px 10px 0px rgba(0, 5, 2, 1) !important;
+        box-shadow:         0px 0px 10px 0px rgba(0, 5, 2, 1) !important;
     }
 </style>
