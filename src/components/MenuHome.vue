@@ -39,7 +39,6 @@
 
 <script>
     import FormularioContacto   from './FormularioContacto.vue';
-    import axios                from 'axios';
     
     
     export default

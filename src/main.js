@@ -2,6 +2,7 @@ import Vue              from 'vue'
 import Router           from 'vue-router'
 import ElementUI        from 'element-ui'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueScrollReveal  from 'vue-scroll-reveal'
 import locale           from 'element-ui/lib/locale/lang/es'
 
 
@@ -21,6 +22,7 @@ Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(Router)
+Vue.use(VueScrollReveal);
 
 
 

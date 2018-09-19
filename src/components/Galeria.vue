@@ -14,7 +14,8 @@
 
             <div id="GridTrabajos">
                 <div v-for="(item,index) in Imagenes" :key="index">
-                    <div class="Trabajos" v-if="Categorias[item.FkCategoria-1].Checked">
+                    <div class="Trabajos" v-if="Categorias[item.FkCategoria-1].Checked" 
+                    v-scroll-reveal.reset="{ delay: 250 }">
                         <img :src="'http://laredmd.com/' + item.URL"/>
                     </div> 
                 </div> 
