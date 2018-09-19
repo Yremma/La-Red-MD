@@ -2,7 +2,7 @@
     <div id="home" style="overflow:hidden">
 
         <!-- Menú -->
-        <menu-home style="margin-top:-1%"></menu-home>
+        <Menu style="margin-top:-1%"></Menu>
 
         <!-- CUBO que gira con frases célebres -->
         <cubo></cubo>
@@ -10,8 +10,8 @@
         <!-- SERVICIOS -->
         <servicios></servicios>
 
-        <!-- GALERIA -->
-        <galeria></galeria>
+        <!-- TRABAJOS -->
+        <trabajos></trabajos>
 
     </div>
 </template>
@@ -19,10 +19,10 @@
 
 
 <script>
-    import Cubo         from './Cubo.vue';
-    import Galeria      from './Galeria.vue';
-    import MenuHome     from './MenuHome.vue';
-    import Servicios    from './Servicios.vue';
+    import Cubo         from './HomeCubo.vue';
+    import Menu         from './Menu.vue';
+    import Servicios    from './HomeServicios.vue';    
+    import Trabajos     from './HomeTrabajos.vue';
 
 
     export default
@@ -30,9 +30,9 @@
 
         components:
         {   Cubo,
-            Galeria,
-            MenuHome,
-            Servicios
+            Menu,
+            Servicios,
+            Trabajos
         },
         
         data()

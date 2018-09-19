@@ -1,13 +1,11 @@
 <template>
-    <div class="menu" id="menuhome">
+    <div class="menu" id="menufalso">
 
         <!-- MENU PANTALLAS --> 
         <el-menu class="hidden-xs-only" mode="horizontal" background-color="#545c64" text-color="#E7A905" active-text-color="#E7A905" style="padding-top:10px">
-            <el-menu-item index="4" style="float:right" v-on:click="ir_a('footer')"     >Contacto           </el-menu-item>            
-            <el-menu-item index="2" style="float:right" v-on:click="dialogVisible=true" >Asesoramiento      </el-menu-item>
-            <el-menu-item index="5" style="float:right" v-on:click="ir_a('Trabajos')"   >Portfolio          </el-menu-item>
-            <el-menu-item index="3" style="float:right" v-on:click="ir_a('Servicios')"  >Servicios          </el-menu-item>
-            <el-menu-item index="1" style="float:right" v-on:click="ir_a('Slide')"      >Inicio             </el-menu-item>  
+            <el-menu-item index="4" style="float:right" v-on:click="ir_a('footer')"                     >Contacto           </el-menu-item>            
+            <el-menu-item index="2" style="float:right"><router-link :to="{ name: 'asesoramiento' }"    >Asesoramiento      </router-link></el-menu-item>
+            <el-menu-item index="1" style="float:right"><router-link :to="{ name: 'home' }"             >Inicio             </router-link></el-menu-item>  
         </el-menu>
 
         <!-- MENU CELULARES -->
@@ -16,42 +14,24 @@
                 <template slot="title">
                     <i class="el-icon-menu"></i>&nbsp;&nbsp;&nbsp;<strong>Menú</strong>
                 </template>
-                <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('Slide')"      >Inicio           </div>
-                <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('Servicios')"  >Servicios        </div>
-                <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('Trabajos')"   >Portfolio        </div>
-                <div class="el-col el-col-24" style="float:right" v-on:click="dialogVisible=true" >Asesoramiento    </div>                
-                <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('footer')"     >Contacto         </div>
+                <div class="el-col el-col-24" style="float:right"><router-link :to="{ name: 'home' }"           >Inicio           </router-link></div>
+                <div class="el-col el-col-24" style="float:right"><router-link :to="{ name: 'asesoramiento' }"  >Asesoramiento    </router-link></div>                
+                <div class="el-col el-col-24" style="float:right" v-on:click="ir_a('footer')"                   >Contacto         </div>
             </el-collapse-item>
         </el-collapse>
-
-
-        <!-- Modal Soporte -->
-        <el-dialog
-            :visible.sync="dialogVisible"
-            width="90%"
-            style="background:#545C64">
-            <formulario-contacto></formulario-contacto>
-        </el-dialog>
-
     </div>
 </template>
 
 
 <script>
-    import FormularioContacto   from './FormularioContacto.vue';
+    import axios from 'axios';
     
     
     export default
-    {   name: 'MenuHome',
+    {   name: 'MenuFalso',
 
-        components:
-        {   FormularioContacto
-        },
-        
         data()
-        {   return { 
-                dialogVisible:  false,
-            };
+        {   return { };
         },
 
         methods: {
@@ -60,11 +40,7 @@
                     behavior: 'smooth' 
                 });
             },
-
-            Cerrar()
-            {   this.dialogVisible = false;
-            },
-        }
+        },
     }
 </script>
 
@@ -109,6 +85,9 @@
         -ms-transition: all 300ms ease-in-out;
         transition: all 300ms ease-in-out;
     }
+    .el-collapse-item__wrap div div a 
+    {   color: #E7A905;
+    }
 
     .menu 
     {   position: fixed;
@@ -121,23 +100,14 @@
     {   margin-left: 0px;
         margin-top: 5% !important;
         margin-bottom: 5% !important;
+        background: url("../assets/Fondo.png");
+        background-position: bottom;
+        background-size: cover;
     }
     .el-dialog__header
     {   text-align: center; 
         font-size: 25px; 
         font-variant: small-caps; 
-        font-weight: bold;
-    }
-
-    .el-dialog__body #contacto
-    {   margin-top: -5%;
-    }
-
-    .el-dialog__headerbtn
-    {   z-index: 999;
-    }
-
-    .el-dialog__headerbtn:hover
-    {   padding: 0px;
+        font-weight: bold; 
     }
 </style>

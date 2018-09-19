@@ -1,6 +1,6 @@
 <template>
-    <div id="galeria">
-        <el-row id="Trabajos" style="padding:0px !important">
+    <div id="trabajos">
+        <el-row style="padding:0px !important">
             <div class="subtitulo">
                 Nuestros Trabajos
             </div>
@@ -31,7 +31,7 @@
     
     
     export default
-    {   name: 'Galeria',
+    {   name: 'Trabajos',
 
         data()
         {   return { 
@@ -64,7 +64,7 @@
 
 
 <style>
-    #galeria
+    #trabajos
     {   background: url("./../assets/FondoVerde.jpg");
         background-attachment: fixed;
         background-position: top;

@@ -1,6 +1,6 @@
 <template>
     <div id="asesoramiento">
-        <Menu style="margin-top:-1%"></Menu>        
+        <menu-falso style="margin-top:-1%"></menu-falso>        
         <formulario-contacto></formulario-contacto>    
     </div>
 </template>
@@ -8,7 +8,7 @@
 
 <script>
     import FormularioContacto   from './FormularioContacto.vue';
-    import Menu                 from './Menu.vue';
+    import MenuFalso            from './MenuFalso.vue';
     import axios                from 'axios';
     
     
@@ -17,7 +17,7 @@
 
         components:
         {   FormularioContacto,
-            Menu,
+            MenuFalso,
         },
         
         data()
