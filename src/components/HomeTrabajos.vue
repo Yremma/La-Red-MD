@@ -25,8 +25,8 @@
 
 
         <!-- Modal Galeria -->
-        <el-dialog :visible.sync="dialogVisible" width="90%">
-            <swiper :options="swiperOption" dir="ltr" ref="mySwiper" v-model="mySwiper" :activeIndex="IndiceActivo"> 
+        <el-dialog :visible.sync="dialogVisible" width="90%" ref="ModalFotos" style="max-height:99vh; overflow:hidden">
+            <swiper :options="swiperOption" dir="ltr" ref="mySwiper"> 
                 <swiper-slide class="swiper-item" v-for="(item,index) in Imagenes" :key="index">
                     <center>
                         <img :src="'http://laredmd.com/' + item.URL" style="max-width:75vw; max-height:75vh"/>
@@ -53,7 +53,7 @@
                 Categorias:     [],
                 Clientes:       [],
                 Imagenes:       [],
-                dialogVisible:  false,
+                dialogVisible:  true,
                 
                 swiperOption: 
                 {   slidesPerView: 1,
@@ -76,11 +76,13 @@
         methods: {
             AbrirGaleria(index)
             {   this.dialogVisible = true;
+                var aux = this.$refs.mySwiper.swiper;
+                aux.slideTo(index,1000,false);
             }          
         },
 
 
-        mounted()
+        beforeMount() 
         {   axios.get('http://laredmd.com/api/trabajos.php')
                .then((response) => {
                     const datos     = response.data;
@@ -91,6 +93,12 @@
                 .catch(e => {
                     this.$message.error('Ha ocurrido un error. Por favor, intente nuevamente.');
                 })
+        },
+
+
+        mounted() 
+        {   this.dialogVisible = false;
+            window.scrollTo(0,0);
         }
     }
 </script>
@@ -197,10 +205,6 @@
         box-shadow:         0px 0px 10px 0px rgba(0, 5, 2, 1) !important;
     }
     
-
-    .el-dialog__header, .el-dialog__body
-    {   padding: 0px !important;
-    }
 
     .swiper-button-prev, .swiper-button-next
     {   background-color: rgba(0,0,0,.3);

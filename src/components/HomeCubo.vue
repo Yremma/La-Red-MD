@@ -1,7 +1,6 @@
 <template>
     <div id="cubo">
-        <div class="hidden-sm-and-up" style="margin-top:15%">&nbsp;</div>
-        <el-row class="block" id="Slide" type="flex" justify="center" style="margin-top:5%">
+        <el-row class="block" id="Slide" type="flex" justify="center" style="padding-top:14vh">
             <el-col :xs="24" :sm="19">
                 <swiper :options="swiperOptionHorizontal" dir="rtl">
                     

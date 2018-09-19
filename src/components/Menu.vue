@@ -2,7 +2,7 @@
     <div class="menu" id="menu">
 
         <!-- MENU PANTALLAS --> 
-        <el-menu class="hidden-xs-only" mode="horizontal" background-color="#545c64" text-color="#E7A905" active-text-color="#E7A905" style="padding-top:10px">
+        <el-menu class="hidden-xs-only" mode="horizontal" background-color="#545c64" text-color="#E7A905" active-text-color="#E7A905">
             <el-menu-item index="4" style="float:right" v-on:click="ir_a('footer')"     >Contacto           </el-menu-item>            
             <el-menu-item index="2" style="float:right" v-on:click="dialogVisible=true" >Asesoramiento      </el-menu-item>
             <el-menu-item index="5" style="float:right" v-on:click="ir_a('trabajos')"   >Portfolio          </el-menu-item>
@@ -115,6 +115,10 @@
         top: 0;
         width: 100%;
         z-index: 9999;
+    }
+    .el-menu, .el-menu-item
+    {   height: 60px !important;
+        padding-top: 2px;
     }
 
     .el-dialog
