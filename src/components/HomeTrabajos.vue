@@ -223,23 +223,31 @@
         font-weight: bold;
         font-size: 30px;
     }
-    .swiper-button-prev:hover, .swiper-button-next:hover
-    {   background-color: rgba(0,0,0,.4);
-    }
+    
     .swiper-button-prev
     {   padding-top: 10px;
-        padding-bottom: 10px;   
+        padding-bottom: 10px; 
+        padding-left: 0px;  
         padding-right: 10px;
         border-top-right-radius: 30px;
         border-bottom-right-radius: 30px;
         margin-left: -10px;
     }
+    .swiper-button-prev:hover
+    {   background-color: rgba(0,0,0,.4);
+        padding-left: 10px;
+    }
     .swiper-button-next
     {   padding-top: 10px;
         padding-bottom: 10px;   
         padding-left: 10px;
+        padding-right: 0px;
         border-top-left-radius: 30px;
         border-bottom-left-radius: 30px;  
         margin-right: -10px;
+    }
+    .swiper-button-next:hover
+    {   background-color: rgba(0,0,0,.4);
+        padding-right: 10px;
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <el-row  class="colFooter">
+        <el-row>
 
             <!-- Columna Vacia -->
             <el-col :xs="24" :sm="8">&nbsp;</el-col>
@@ -51,9 +51,11 @@
 
 
 <style>
-    .colFooter
+    #footer
     {   background: #545C64;
         color: #fff;
+        width: 100%;
+        z-index: 9998;
     }
 
     .BtnSocial

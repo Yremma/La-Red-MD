@@ -101,7 +101,7 @@
                     speed: 1200,
                     loop: true,
                     autoplay: {
-                        delay: 3000,
+                        delay: 11000,
                     },
                     navigation: {
                         nextEl: '.swiper-button-next',

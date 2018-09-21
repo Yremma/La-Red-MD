@@ -15,7 +15,6 @@ import 'swiper/dist/css/swiper.css'
 import App              from './App.vue'
 import Home             from '@/components/Home'
 import Asesoramiento    from '@/components/Asesoramiento'
-import Galeria          from '@/components/GaleriaTrabajos'
 
 
 
@@ -33,8 +32,6 @@ const router = new Router({
       {   path: '/',                name: 'home',           component: Home,
       },
       {   path: '/asesoramiento',   name: 'asesoramiento',  component: Asesoramiento,
-      },
-      {   path: '/galeria',         name: 'galeria',        component: Galeria,
       },
       {   path: '',                 redirect: '/',
       },

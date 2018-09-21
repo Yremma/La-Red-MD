@@ -1,12 +1,16 @@
 <template>
     <el-container id="app">
-        <el-main v-bind:style="{ minHeight: Height + 'px' }" 
-        style="padding:0px; margin-top:-8px; margin-right:-8px; margin-left:-8px">
+
+        <!-- Cuerpo -->
+        <el-main style="min-height:91vh; padding:0px">
             <router-view></router-view>
         </el-main>
-        <el-footer style="padding:0px; margin-right:-8px; margin-left:-8px; height:0px">
+
+        <!-- Footer -->
+        <el-footer style="padding:0px">
             <Footer></Footer>
         </el-footer>
+
     </el-container>
 </template>
 
@@ -23,31 +27,29 @@
     
         data()
         {   return {
-                Height: window.innerHeight * 72 / 100,
-                Ancho:  window.innerWidth  * 97 / 100,
+                Ancho:      window.innerWidth
             }
         },
 
 
         methods:
-        {   // FUNCION PARA CALCULAR SI SE GIRA EL CELULAR Y HACER REFRESH
-            Calcular()
-            {   if( (window.innerWidth*97/100)!=this.Ancho )
+        {   Calcular()
+            {   if(window.innerWidth!=this.Ancho )
                 {   location.reload();
                 }   
-            }        
+            } 
         },
         
         
         beforeMount()
-        {   this.Ancho  = window.innerWidth  * 97 / 100;
+        {   this.Ancho  = window.innerWidth;
         },
 
 
         mounted()
         {   this.Calcular();
             setInterval(this.Calcular, 300);
-        }
+        },
     }
 </script>
 
@@ -71,6 +73,10 @@
         background-position: bottom;
         background-size: cover;
         background-repeat: no-repeat;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     .titulo
     {   background: #788EDC;
